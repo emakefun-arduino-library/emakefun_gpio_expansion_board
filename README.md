@@ -51,15 +51,15 @@
 
 - 描述：设置GPIO模式。
 - 参数：
-  - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](README.md#GPIO引脚)
-  - `mode`：GPIO模式。枚举类型，取值范围参考：[GPIO可配置模式](README.md#GPIO可配置模式)
+  - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](#GPIO引脚)
+  - `mode`：GPIO模式。枚举类型，取值范围参考：[GPIO可配置模式](#GPIO可配置模式)
 - 返回值：成功返回true，失败返回false。
 
 #### `bool SetGpioLevel(GpioPin gpio_pin, uint8_t level)`
 
 - 描述：设置GPIO输出电平。
 - 参数：
-  - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](README.md#GPIO引脚)
+  - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](#GPIO引脚)
   - `level`：电平值，0为低电平，1为高电平。
 - 返回值：成功返回true，失败返回false。
 
@@ -67,7 +67,7 @@
 
 - 描述：获取GPIO输出电平。
 - 参数：
-  - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](README.md#GPIO引脚)
+  - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](#GPIO引脚)
 - 返回值：电平值，0为低电平，1为高电平。
 
 ### ADC相关函数
@@ -76,7 +76,7 @@
 
 - 描述：获取GPIO ADC电平值。
 - 参数：
-  - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](README.md#GPIO引脚)
+  - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](#GPIO引脚)
 - 返回值：ADC电平值。范围0 ~ 1023
 
 ### PWM相关函数
@@ -92,7 +92,7 @@
 
 - 描述：设置PWM的占空比，使用前需要将引脚的模式设置为pwm模式(kPwm)。
 - 参数：
-  - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](README.md#GPIO引脚)
+  - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](#GPIO引脚)
   - `duty`：占空比，范围: 0 ~ 100, 单位%，代表占空比 0% ~ 100%。
 - 返回值：成功返回true，失败返回false。
 
@@ -102,7 +102,7 @@
 
 - 描述：驱动舵机转动到指定角度，**只支持E1 ~ E2**。
 - 参数：
-  - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](README.md#GPIO引脚)
+  - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](#GPIO引脚)
   - `angle`：角度值，范围0 ~ 180。
 - 返回值：成功返回true，失败返回false。
 
