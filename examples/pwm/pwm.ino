@@ -18,11 +18,11 @@ void setup() {
 }
 
 void loop() {
-  // 设置E1的pwm输出占空比为30
-  gpio_expansion_board.SetPwmDuty(GpioExpansionBoard::kGpioPinE1, 30);
+  // 设置E1的pwm输出占空比为2048，比值为2048 / 4095 约为 50%
+  gpio_expansion_board.SetPwmDuty(GpioExpansionBoard::kGpioPinE1, 2048);
   delay(1000);
 
-  // 设置E1的pwm输出占空比为70
-  gpio_expansion_board.SetPwmDuty(GpioExpansionBoard::kGpioPinE1, 70);
+  // 设置E1的pwm输出占空比为1024，比值为1024 / 4095 约为 25%
+  gpio_expansion_board.SetPwmDuty(GpioExpansionBoard::kGpioPinE1, 1024);
   delay(1000);
 }

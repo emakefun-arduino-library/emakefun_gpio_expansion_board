@@ -88,10 +88,10 @@ class GpioExpansionBoard {
   /**
    * @brief 设置PWM的占空比,使用前需要将引脚的模式设置为pwm模式(kPwm)
    * @param [in] gpio_pin GPIO引脚 @see GpioPin
-   * @param [in] duty 占空比，范围: 0 ~ 100, 单位%，代表占空比 0% ~ 100%
+   * @param [in] duty 精度为12位的占空比，取值范围: 0 ~ 4095
    * @return bool 成功返回true，失败返回false
    */
-  bool SetPwmDuty(GpioPin gpio_pin, uint8_t duty);
+  bool SetPwmDuty(GpioPin gpio_pin, uint16_t duty);
 
   /**
    * @brief 驱动舵机转动到指定角度

@@ -1,7 +1,7 @@
+#include "gpio_expansion_board.h"
+
 #include <Wire.h>
 #include <arduino.h>
-
-#include "gpio_expansion_board.h"
 
 #define ADDRESS_VERSION (0x00)
 #define ADDRESS_IO_MODE (0x01)
@@ -10,7 +10,7 @@
 #define ADDRESS_RATIO_VOLTAGE (0x30)
 #define ADDRESS_DIGITAL_VALUES (0x40)
 #define ADDRESS_PWM_DUTY (0x50)
-#define ADDRESS_PWM_FREQUENCY (0x58)
+#define ADDRESS_PWM_FREQUENCY (0x60)
 
 GpioExpansionBoard::GpioExpansionBoard(uint8_t device_i2c_address) : device_i2c_address_(device_i2c_address) {
   Wire.begin();
@@ -109,14 +109,13 @@ bool GpioExpansionBoard::SetPwmFrequency(uint32_t frequency) {
   return Wire.endTransmission() == 0;
 }
 
-bool GpioExpansionBoard::SetPwmDuty(GpioPin gpio_pin, uint8_t duty) {
+bool GpioExpansionBoard::SetPwmDuty(GpioPin gpio_pin, uint16_t duty) {
   Wire.beginTransmission(device_i2c_address_);
-  Wire.write(ADDRESS_PWM_DUTY + gpio_pin);
-  Wire.write(duty);
+  Wire.write(ADDRESS_PWM_DUTY + gpio_pin * sizeof(duty));
+  Wire.write(reinterpret_cast<uint8_t*>(&duty), sizeof(duty));
   return Wire.endTransmission() == 0;
 }
 
 bool GpioExpansionBoard::SetServoAngle(GpioPin gpio_pin, float angle) {
-  return SetPwmFrequency(50) && SetPwmDuty(gpio_pin, static_cast<uint8_t>(((angle / 90) + 0.5) * 100 / 20)) &&
-         SetGpioMode(gpio_pin, kPwm);
+  return SetPwmFrequency(50) && SetPwmDuty(gpio_pin, ((angle / 90) + 0.5) / 20 * 4095) && SetGpioMode(gpio_pin, kPwm);
 }

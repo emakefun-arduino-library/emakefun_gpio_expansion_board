@@ -1,6 +1,6 @@
 # GpioExpansionBoard使用文档
 
-`GpioExpansionBoard`是一个GPIO扩展板主类，它提供了多种功能，包括设置GPIO模式、设置GPIO输出电平、获取GPIO输出电平、获取GPIO ADC电平值、设置GPIO开发板PWM频率、设置PWM占空比和驱动舵机转动到指定角度等。
+`GpioExpansionBoard`是一个GPIO扩展板主类，它提供了多种功能，包括设置GPIO模式、设置GPIO输出电平、获取GPIO输出电平、获取GPIO ADC电平值、设置GPIO开发板PWM频率(1 ~ 10000hz)、设置PWM占空比和驱动舵机转动到指定角度等。
 
 ## API使用文档
 
@@ -88,12 +88,12 @@
   - `frequency`：PWM频率，单位：HZ。
 - 返回值：成功返回true，失败返回false。
 
-#### `bool SetPwmDuty(GpioPin gpio_pin, uint8_t duty)`
+#### `bool SetPwmDuty(GpioPin gpio_pin, uint16 duty)`
 
 - 描述：设置PWM的占空比，使用前需要将引脚的模式设置为pwm模式(kPwm)。
 - 参数：
   - `gpio_pin`：GPIO引脚。枚举类型，取值范围参考：[GPIO引脚](#gpio引脚)
-  - `duty`：占空比，范围: 0 ~ 100, 单位%，代表占空比 0% ~ 100%。
+  - `duty`：精度为12位的占空比，取值范围: 0 ~ 4095
 - 返回值：成功返回true，失败返回false。
 
 ### 舵机相关函数
@@ -266,12 +266,12 @@ void setup() {
 }
 
 void loop() {
-  // 设置E1的pwm输出占空比为30
-  gpio_expansion_board.SetPwmDuty(GpioExpansionBoard::kGpioPinE1, 30);
+  // 设置E1的pwm输出占空比为2048，比值为2048 / 4095 约为 50%
+  gpio_expansion_board.SetPwmDuty(GpioExpansionBoard::kGpioPinE1, 2048);
   delay(1000);
 
-  // 设置E1的pwm输出占空比为70
-  gpio_expansion_board.SetPwmDuty(GpioExpansionBoard::kGpioPinE1, 70);
+  // 设置E1的pwm输出占空比为1024，比值为1024 / 4095 约为 25%
+  gpio_expansion_board.SetPwmDuty(GpioExpansionBoard::kGpioPinE1, 1024);
   delay(1000);
 }
 ```
