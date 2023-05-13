@@ -1,0 +1,38 @@
+#######################################
+# Classes, datatypes (KEYWORD1)
+#######################################
+
+GpioExpansionBoard	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+GpioExpansionBoard KEYWORD2
+SetGpioMode KEYWORD2
+SetGpioLevel KEYWORD2
+GetGpioLevel KEYWORD2
+GetGpioAdcValue KEYWORD2
+SetPwmFrequency KEYWORD2
+SetPwmDuty KEYWORD2
+SetServoAngle KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+kNone LITERAL1
+kInputPullUp LITERAL1
+kInputPullDown LITERAL1
+kInputFloating LITERAL1
+kOutput LITERAL1
+kAdc LITERAL1
+kPwm LITERAL1
+kGpioPinE0 LITERAL1
+kGpioPinE1 LITERAL1
+kGpioPinE2 LITERAL1
+kGpioPinE3 LITERAL1
+kGpioPinE4 LITERAL1
+kGpioPinE5 LITERAL1
+kGpioPinE6 LITERAL1
+kGpioPinE7 LITERAL1
