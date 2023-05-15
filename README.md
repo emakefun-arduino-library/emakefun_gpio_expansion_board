@@ -81,11 +81,11 @@
 
 ### PWM相关函数
 
-#### `bool SetPwmFrequency(uint32_t frequency)`
+#### `bool SetPwmFrequency(uint16_t frequency)`
 
 - 描述：设置GPIO开发板PWM频率。
 - 参数：
-  - `frequency`：PWM频率，单位：HZ。
+  - `frequency`：PWM频率，单位：HZ。范围：1 ~ 10000
 - 返回值：成功返回true，失败返回false。
 
 #### `bool SetPwmDuty(GpioPin gpio_pin, uint16 duty)`

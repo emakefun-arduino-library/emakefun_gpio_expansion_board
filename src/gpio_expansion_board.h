@@ -83,7 +83,7 @@ class GpioExpansionBoard {
    * @param [in] frequency PWM频率，单位：HZ
    * @return bool 成功返回true，失败返回false
    */
-  bool SetPwmFrequency(uint32_t frequency);
+  bool SetPwmFrequency(uint16_t frequency);
 
   /**
    * @brief 设置PWM的占空比,使用前需要将引脚的模式设置为pwm模式(kPwm)

@@ -102,7 +102,7 @@ uint16_t GpioExpansionBoard::GetGpioRatioVoltage(GpioPin gpio_pin) {
   return 0;
 }
 #endif
-bool GpioExpansionBoard::SetPwmFrequency(uint32_t frequency) {
+bool GpioExpansionBoard::SetPwmFrequency(uint16_t frequency) {
   Wire.beginTransmission(device_i2c_address_);
   Wire.write(ADDRESS_PWM_FREQUENCY);
   Wire.write(reinterpret_cast<uint8_t*>(&frequency), sizeof(frequency));
