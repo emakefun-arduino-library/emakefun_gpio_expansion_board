@@ -9,7 +9,7 @@
 #### 扩展板默认I2C地址：0x24
 
 || 值 | 描述 |
-| --- | --- |
+| --- | --- | --- |
 | GpioExpansionBoard::kDeviceI2cAddressDefault | 0x24 | 扩展板默认I2C地址 |
 
 #### GPIO可配置模式
