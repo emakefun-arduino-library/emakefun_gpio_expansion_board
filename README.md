@@ -8,34 +8,34 @@
 
 #### 扩展板默认I2C地址：0x24
 
-|| 描述 |
+|| 值 | 描述 |
 | --- | --- |
-| GpioExpansionBoard::kDeviceI2cAddressDefault | 扩展板默认I2C地址：0x24 |
+| GpioExpansionBoard::kDeviceI2cAddressDefault | 0x24 | 扩展板默认I2C地址 |
 
 #### GPIO可配置模式
 
-| GpioExpansionBoard::GpioMode | 描述 |
-| --- | --- |
-| GpioExpansionBoard::GpioMode::kNone | 无效模式，请勿直接使用，程序内部自用 |
-| GpioExpansionBoard::GpioMode::kInputPullUp | 输入模式，默认拉高电平 |
-| GpioExpansionBoard::GpioMode::kInputPullDown | 输入模式，默认拉低电平 |
-| GpioExpansionBoard::GpioMode::kInputFloating | 浮空输入模式 |
-| GpioExpansionBoard::GpioMode::kOutput | 输出模式 |
-| GpioExpansionBoard::GpioMode::kAdc | ADC模式 |
-| GpioExpansionBoard::GpioMode::kPwm | PWM输出模式（**只支持引脚E1 ~ E2**） |
+| GpioExpansionBoard::GpioMode | 值 | 描述 |
+| --- | --- | --- |
+| GpioExpansionBoard::GpioMode::**kNone** | 0 | 无效模式，请勿直接使用，程序内部自用 |
+| GpioExpansionBoard::GpioMode::**kInputPullUp** | 1 | 输入模式，默认拉高电平 |
+| GpioExpansionBoard::GpioMode::**kInputPullDown** | 2 | 输入模式，默认拉低电平 |
+| GpioExpansionBoard::GpioMode::**kInputFloating** | 4 |浮空输入模式 |
+| GpioExpansionBoard::GpioMode::**kOutput** | 8 | 输出模式 |
+| GpioExpansionBoard::GpioMode::**kAdc** | 16 | ADC模式 |
+| GpioExpansionBoard::GpioMode::**kPwm** | 32 | PWM输出模式（**只支持引脚E1 ~ E2**） |
 
 #### GPIO引脚
 
-| GpioExpansionBoard::GpioPin | 描述 |
-| --- | --- |
-| GpioExpansionBoard::GpioPin::kGpioPinE0 | 引脚E0 |
-| GpioExpansionBoard::GpioPin::kGpioPinE1 | 引脚E1 |
-| GpioExpansionBoard::GpioPin::kGpioPinE2 | 引脚E2 |
-| GpioExpansionBoard::GpioPin::kGpioPinE3 | 引脚E3 |
-| GpioExpansionBoard::GpioPin::kGpioPinE4 | 引脚E4 |
-| GpioExpansionBoard::GpioPin::kGpioPinE5 | 引脚E5 |
-| GpioExpansionBoard::GpioPin::kGpioPinE6 | 引脚E6 |
-| GpioExpansionBoard::GpioPin::kGpioPinE7 | 引脚E7 |
+| GpioExpansionBoard::GpioPin | 值 | 描述 |
+| --- | --- | --- |
+| GpioExpansionBoard::GpioPin::**kGpioPinE0** | 0 | 引脚E0 |
+| GpioExpansionBoard::GpioPin::**kGpioPinE1** | 1 | 引脚E1 |
+| GpioExpansionBoard::GpioPin::**kGpioPinE2** | 2 | 引脚E2 |
+| GpioExpansionBoard::GpioPin::**kGpioPinE3** | 3 | 引脚E3 |
+| GpioExpansionBoard::GpioPin::**kGpioPinE4** | 4 | 引脚E4 |
+| GpioExpansionBoard::GpioPin::**kGpioPinE5** | 5 | 引脚E5 |
+| GpioExpansionBoard::GpioPin::**kGpioPinE6** | 6 | 引脚E6 |
+| GpioExpansionBoard::GpioPin::**kGpioPinE7** | 7 | 引脚E7 |
 
 ### 构造函数
 
